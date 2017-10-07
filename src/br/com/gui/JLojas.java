@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.sun.javafx.tk.Toolkit.Task;
+
 /**
  *
  * @author wev
@@ -95,31 +97,25 @@ public class JLojas extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void mostraLoja() {
+    public void mostraLoja() throws InterruptedException {
     	
     	jLabelFilial.setText(getLoja());
-    	this.setVisible(isDisplayable());
-    	ActionListener task = new ActionListener() {
-			boolean ativo = false;
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				dispose();
-			}
-		}; 
-    			
+    	    	
     	Timer timer = new Timer();
-    	timer.schedule((TimerTask) task, 2000);
-    	teste();
+    	timer.schedule(task(), 2000);
+    	timer.wait(2000);
+    	
     	this.dispose();
     	
     }
     
-    public void teste() {
+    public TimerTask task() {
+    	this.isDisplayable();
     	for (int i = 0; i < 100; i++) {
     		jProgressBarRelease.setValue(i);
 			
 		}
+		return null;
     }
     /**
      * @param args the command line arguments

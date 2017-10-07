@@ -41,7 +41,6 @@ public class VerificaUltimaReleasesFiliais  extends javax.swing.JDialog {
 			JLojas jLojas = new JLojas(null, rootPaneCheckingEnabled);
 			jLojas.setLoja(loja);
 			jLojas.mostraLoja();
-			jLojas.dispose();
 
 
 
