@@ -34,6 +34,7 @@ public class FRelease extends javax.swing.JDialog {
 //	private List<String> listaRelease;
 
     Release release = new Release();
+    DefaultTableModel val ;
 //	
 
     /**
@@ -62,10 +63,8 @@ public class FRelease extends javax.swing.JDialog {
         jScrollPaneRelease = new javax.swing.JScrollPane();
         jTableRelease = new javax.swing.JTable();
         jPanelButao = new javax.swing.JPanel();
-        jToggleButtonGeraRelease = new javax.swing.JToggleButton();
-        jButtonBaixaRelease = new javax.swing.JButton();
-        jToggleButtonFechaJanela = new javax.swing.JToggleButton();
-        jButtonExecutaDeploy = new javax.swing.JButton();
+        jToggleButtonrelease = new javax.swing.JToggleButton();
+        jToggleButtonSair = new javax.swing.JToggleButton();
         jButtonImprimir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -99,7 +98,7 @@ public class FRelease extends javax.swing.JDialog {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -119,59 +118,55 @@ public class FRelease extends javax.swing.JDialog {
 
         jPanelButao.setLayout(new java.awt.GridBagLayout());
 
-        jToggleButtonGeraRelease.setMnemonic('v');
-        jToggleButtonGeraRelease.setText("Ver Releases");
-        jToggleButtonGeraRelease.addActionListener(new java.awt.event.ActionListener() {
+        jToggleButtonrelease.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/resources/verReleases.png"))); // NOI18N
+        jToggleButtonrelease.setMnemonic('R');
+        jToggleButtonrelease.setText("Release");
+        jToggleButtonrelease.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButtonGeraReleaseActionPerformed(evt);
-            }
-        });
-        jPanelButao.add(jToggleButtonGeraRelease, new java.awt.GridBagConstraints());
-
-        jButtonBaixaRelease.setText("Baixar Release");
-        jButtonBaixaRelease.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBaixaReleaseActionPerformed(evt);
-            }
-        });
-        jPanelButao.add(jButtonBaixaRelease, new java.awt.GridBagConstraints());
-
-        jToggleButtonFechaJanela.setMnemonic('f');
-        jToggleButtonFechaJanela.setText("Fechar Janela");
-        jToggleButtonFechaJanela.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButtonFechaJanelaActionPerformed(evt);
+                jToggleButtonreleaseActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        jPanelButao.add(jToggleButtonFechaJanela, gridBagConstraints);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanelButao.add(jToggleButtonrelease, gridBagConstraints);
 
-        jButtonExecutaDeploy.setText("Exec. Deploy");
-        jButtonExecutaDeploy.addActionListener(new java.awt.event.ActionListener() {
+        jToggleButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/resources/exit.png"))); // NOI18N
+        jToggleButtonSair.setMnemonic('S');
+        jToggleButtonSair.setText("Sair");
+        jToggleButtonSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonExecutaDeployActionPerformed(evt);
+                jToggleButtonSairActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
-        jPanelButao.add(jButtonExecutaDeploy, gridBagConstraints);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanelButao.add(jToggleButtonSair, gridBagConstraints);
 
+        jButtonImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/resources/impressora.png"))); // NOI18N
+        jButtonImprimir.setMnemonic('I');
         jButtonImprimir.setText("Imprimir");
         jButtonImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
-                    jButtonImprimirActionPerformed(evt);
-                } catch (JRException e) {
-                    e.printStackTrace();
-                }
+					jButtonImprimirActionPerformed(evt);
+				} catch (JRException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanelButao.add(jButtonImprimir, gridBagConstraints);
 
         javax.swing.GroupLayout jPanelPrincipalLayout = new javax.swing.GroupLayout(jPanelPrincipal);
@@ -206,19 +201,19 @@ public class FRelease extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButtonFechaJanelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonFechaJanelaActionPerformed
+    private void jToggleButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonSairActionPerformed
         dispose();
-    }//GEN-LAST:event_jToggleButtonFechaJanelaActionPerformed
+    }//GEN-LAST:event_jToggleButtonSairActionPerformed
 
     @SuppressWarnings("static-access")
-    private void jToggleButtonGeraReleaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonGeraReleaseActionPerformed
+    private void jToggleButtonreleaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonreleaseActionPerformed
 
         String Todas = "TODAS";
 
         String lojaComParametros = null;
         VerificaUltimaReleasesFiliais verificaRelease = new VerificaUltimaReleasesFiliais();
-        DefaultTableModel val = (DefaultTableModel) jTableRelease.getModel();
         TesteComunicacao comunicacao = new TesteComunicacao();
+        val =  (DefaultTableModel) jTableRelease.getModel();
         val.setNumRows(0);
         int qtdloja = 0;
 
@@ -331,123 +326,27 @@ public class FRelease extends javax.swing.JDialog {
         }
 
 
-    }//GEN-LAST:event_jToggleButtonGeraReleaseActionPerformed
-
-    private void jButtonBaixaReleaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBaixaReleaseActionPerformed
-
-        String Todas = "TODAS";
-        VerificaUltimaReleasesFiliais verificaRelease = new VerificaUltimaReleasesFiliais();
-        DefaultTableModel val = (DefaultTableModel) jTableRelease.getModel();
-        val.setNumRows(0);
-        int qtdloja = 0;
-
-        if (jComboBoxListaLoja.getSelectedItem().toString() == Todas) {
-//			TodasAsLojas tlojas = new TodasAsLojas();
-//			ArrayList<String> lojas = tlojas.ListaLojas();
-            for (int i = 0; i < lojas.size(); i++) {
-                qtdloja = i++;
-            }
-        }
-        if (jComboBoxListaLoja.getSelectedItem().toString() == Todas) {
-            TodasAsLojas tlojas = new TodasAsLojas();
-            ArrayList<String> lojas = tlojas.ListaLojas();
-            for (int i = 0; i < lojas.size(); i++) {
-                String loja = lojas.get(i);
-                verificaRelease.BaixarRelease(lojas.get(i), qtdloja);
-
-
-            }
-        } else {
-            String loja = jComboBoxListaLoja.getSelectedItem().toString();
-            qtdloja = 1;
-            int column;
-            verificaRelease.BaixarRelease(loja, qtdloja);
-            JOptionPane.showMessageDialog(null, "Foi finalizado a Baixa da Release!");
-        }
-    }//GEN-LAST:event_jButtonBaixaReleaseActionPerformed
-
-    private void jButtonExecutaDeployActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExecutaDeployActionPerformed
-        // TODO add your handling code here:
-        try {
-            ExecutaDeploy executaDaploy = new ExecutaDeploy();
-            if (!jComboBoxListaLoja.getSelectedItem().toString().isEmpty()) {
-                executaDaploy.deploy(jComboBoxListaLoja.getSelectedItem().toString());
-                JOptionPane.showMessageDialog(null, "Deploy Finalizado!");
-
-            } else if ((boolean) jTableRelease.getValueAt(jTableRelease.getSelectedRow(), 0) == true) {
-                System.out.println(jTableRelease.getValueAt(jTableRelease.getSelectedRow(), 0));
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Você Tem Que Informar a Loja!");
-            }
-
-        } catch (Exception e) {
-            System.out.println("Erro ..." + e);
-            e.printStackTrace();
-        }
-
-
-    }//GEN-LAST:event_jButtonExecutaDeployActionPerformed
+    }//GEN-LAST:event_jToggleButtonreleaseActionPerformed
 
     private void jButtonImprimirActionPerformed(java.awt.event.ActionEvent evt) throws JRException {//GEN-FIRST:event_jButtonImprimirActionPerformed
-//    
-//    	Collection<String> resultado = new ArrayList<String>();
-//    			resultado.add(release.getLoja());
-//    			resultado.add(release.getReleaseBaixada());
-//    			resultado.add(release.getReleaseAplicada());
 
-    	/*
-    	List<Release> resultado =(List<Release>) jTableRelease.getValueAt(jTableRelease.getSelectedRow(), 0);
-
-    			
-    	InputStream path_relatorio = this.getClass().getResourceAsStream("/br/com/report/release001.jasper"); 
-    	JRBeanCollectionDataSource datasource = new JRBeanCollectionDataSource(resultado);
-		JasperPrint jasperPrint = JasperFillManager.fillReport(path_relatorio, null, datasource);
-		JasperViewer jasprViewer = new JasperViewer(jasperPrint , false);
-		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-		jasprViewer.setSize(dimension);
-		jasprViewer.setVisible(true); */
-//    	imp.impressaoSO();
-
-        BarraDeProgresso();
     }//GEN-LAST:event_jButtonImprimirActionPerformed
 
     private void jComboBoxListaLojaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jComboBoxListaLojaKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            jToggleButtonGeraRelease.requestFocus();
+            jToggleButtonrelease.requestFocus();
         }
     }//GEN-LAST:event_jComboBoxListaLojaKeyPressed
 
     private void jTableReleaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableReleaseMouseClicked
         // TODO add your handling code here:
         FDeployRelease fDeployRelease = new FDeployRelease(null, rootPaneCheckingEnabled);
+        System.out.println(jTableRelease.getValueAt(jTableRelease.getSelectedRow(), 0));
         fDeployRelease.setVisible(true);
 
 
     }//GEN-LAST:event_jTableReleaseMouseClicked
-
-
-    public void BarraDeProgresso() {
-
-        try {
-            JProgressBar progresso = new JProgressBar();
-            setSize(300, 70);
-            add(progresso);
-            setLocationRelativeTo(null);
-            setCursor(new Cursor(Cursor.WAIT_CURSOR));
-            setVisible(true);
-            progresso.setToolTipText("Aguarde...");
-            for (int i = 0; i < 100; i++) {
-                progresso.setValue(i);
-                Thread.sleep(100);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
 
 
     /**
@@ -493,8 +392,6 @@ public class FRelease extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBaixaRelease;
-    private javax.swing.JButton jButtonExecutaDeploy;
     private javax.swing.JButton jButtonImprimir;
     private javax.swing.JComboBox jComboBoxListaLoja;
     private javax.swing.JLabel jLabelLojas;
@@ -503,8 +400,8 @@ public class FRelease extends javax.swing.JDialog {
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JScrollPane jScrollPaneRelease;
     private javax.swing.JTable jTableRelease;
-    private javax.swing.JToggleButton jToggleButtonFechaJanela;
-    private javax.swing.JToggleButton jToggleButtonGeraRelease;
+    private javax.swing.JToggleButton jToggleButtonSair;
+    private javax.swing.JToggleButton jToggleButtonrelease;
     // End of variables declaration//GEN-END:variables
 
 

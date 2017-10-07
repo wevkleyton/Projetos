@@ -37,6 +37,7 @@ public class VerificaUltimaReleasesFiliais  extends javax.swing.JDialog {
 		try {
 					
 			System.out.println("Loja :" + loja);
+			JOptionPane.showMessageDialog(null, "Verificando Releases da Filial: " + loja);
 
 		    if (loja.equals("STI")){
 				release.setLoja(loja.toUpperCase());

@@ -38,7 +38,14 @@ public class FDeployRelease extends javax.swing.JDialog {
 
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
+        jToggleButtonExecDeploy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/resources/deploy.png"))); // NOI18N
+        jToggleButtonExecDeploy.setMnemonic('D');
         jToggleButtonExecDeploy.setText("Exec. Deploy");
+        jToggleButtonExecDeploy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonExecDeployActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -46,7 +53,14 @@ public class FDeployRelease extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         jPanel1.add(jToggleButtonExecDeploy, gridBagConstraints);
 
+        jToggleButtonExecRelease.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/resources/release.png"))); // NOI18N
+        jToggleButtonExecRelease.setMnemonic('R');
         jToggleButtonExecRelease.setText("Exec. Release");
+        jToggleButtonExecRelease.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonExecReleaseActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -67,6 +81,14 @@ public class FDeployRelease extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButtonExecDeployActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonExecDeployActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButtonExecDeployActionPerformed
+
+    private void jToggleButtonExecReleaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonExecReleaseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButtonExecReleaseActionPerformed
 
     /**
      * @param args the command line arguments
