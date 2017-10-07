@@ -14,6 +14,7 @@ import br.com.bean.Release;
 import br.com.constantes.ConstanteComandos;
 import br.com.constantes.ConstanteTeste;
 import br.com.gui.FRelease;
+import br.com.gui.JLojas;
 import br.com.utilitarios.Conecta;
 
 /**
@@ -37,7 +38,12 @@ public class VerificaUltimaReleasesFiliais  extends javax.swing.JDialog {
 		try {
 					
 			System.out.println("Loja :" + loja);
-			JOptionPane.showMessageDialog(null, "Verificando Releases da Filial: " + loja);
+			JLojas jLojas = new JLojas(null, rootPaneCheckingEnabled);
+			jLojas.setLoja(loja);
+			jLojas.mostraLoja();
+			jLojas.dispose();
+
+
 
 		    if (loja.equals("STI")){
 				release.setLoja(loja.toUpperCase());
