@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RReleases001" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e1c5c9df-cc4f-41d1-b286-25d8fb5cbd7b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<group name="Group1">
+		<groupHeader>
+			<band height="33">
+				<line>
+					<reportElement uuid="79cad6ec-c12f-49c6-a478-c45b17909c94" x="-20" y="32" width="595" height="1" forecolor="#666666"/>
+				</line>
+				<textField>
+					<reportElement uuid="5f7cfad4-941f-4f2b-8dc2-0660084d2cfa" x="0" y="1" width="100" height="31"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{loja}$P{REPORT_PARAMETERS_MAP}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="2c307e2c-82a0-4141-8f28-471c55c5b5bd" x="195" y="0" width="103" height="32"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{releaseBaixada}$P{REPORT_PARAMETERS_MAP}.get( Object )]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="2b5bd52a-b3d0-4f0f-816a-9f8b61af9bb1" x="419" y="3" width="112" height="28"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{releaseAplicada}$P{REPORT_PARAMETERS_MAP}$P{REPORT_PARAMETERS_MAP}.get( Object )]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="8b43785f-2c7f-44d5-8ef4-99cb5435aeaf" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="1bec7c18-16e2-4135-acc4-a81b73662962" x="20" y="20" width="234" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Releases]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f19c8317-bd19-4b1e-9769-147fbd9d3351" x="395" y="43" width="180" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relatório de Releases]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement uuid="681b4f61-e008-4444-8db5-7533b20cc6cd" x="-20" y="20" width="595" height="1" forecolor="#666666"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="7">
+			<line>
+				<reportElement uuid="f4af7323-df2a-4d9f-b6fa-f835f4e74df3" positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="39333bda-49d9-46c4-b0e5-023a4b35dc86" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="8d61057f-cfd7-4eef-9646-f1acc56078d7" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="95781b39-b4ea-4a9a-b8d8-abe1c77ee1fc" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

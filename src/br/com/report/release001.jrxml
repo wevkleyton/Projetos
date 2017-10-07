@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="release001" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fee383fc-62e0-49f8-9487-1fa9311599aa">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="loja" class="java.lang.String"/>
+	<field name="aplicada" class="java.lang.String"/>
+	<field name="baixada" class="java.lang.String"/>
+	<variable name="loja" class="java.lang.String"/>
+	<variable name="baixada" class="java.lang.String"/>
+	<variable name="aplicada" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="16d7a487-a6b9-4c34-88ad-59c62d404ef6" x="0" y="0" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[LOJA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c1abd3f-590e-4778-b2d4-05390b9a9b8c" x="223" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Aplicada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d472fe20-432d-467a-8509-fa729535b4e0" x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Baixada]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement uuid="2682541c-5e35-49b5-b31d-ba9faa8ae09e" x="0" y="25" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{loja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a4ddfe0f-d556-4872-8595-d7092b09646c" x="223" y="25" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{aplicada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="22b6567f-f748-439e-92d0-7ed48d477801" x="455" y="25" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{baixada}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanelEnviaArquivos" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanelEnviaArquivos" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanelEnviaArquivos">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jButtonTrazerArquivos" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jButtonEnviarArquivo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jButtonFechar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabelLoja" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jComboBoxLojas" min="-2" pref="309" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelPathOrigem" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelPathDestino" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelArquivo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jTextFieldPathOrigem" max="32767" attributes="0"/>
+                              <Component id="jTextFieldPathDestino" max="32767" attributes="0"/>
+                              <Component id="jTextFieldNomeArquivos" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelLoja" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBoxLojas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelPathOrigem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldPathOrigem" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelPathDestino" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldPathDestino" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <Component id="jLabelArquivo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jTextFieldNomeArquivos" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jButtonTrazerArquivos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonEnviarArquivo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonFechar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabelLoja">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Loja:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBoxLojas">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="53">
+                <StringItem index="0" value="TESTE"/>
+                <StringItem index="1" value="TODAS"/>
+                <StringItem index="2" value="IGM"/>
+                <StringItem index="3" value="NRE"/>
+                <StringItem index="4" value="SDN"/>
+                <StringItem index="5" value="VMR"/>
+                <StringItem index="6" value="JAC"/>
+                <StringItem index="7" value="SLL"/>
+                <StringItem index="8" value="ABA"/>
+                <StringItem index="9" value="RED"/>
+                <StringItem index="10" value="COA"/>
+                <StringItem index="11" value="TCM"/>
+                <StringItem index="12" value="TAL"/>
+                <StringItem index="13" value="MJU"/>
+                <StringItem index="14" value="STI"/>
+                <StringItem index="15" value="BNV"/>
+                <StringItem index="16" value="RBC"/>
+                <StringItem index="17" value="BCN"/>
+                <StringItem index="18" value="VDE"/>
+                <StringItem index="19" value="BGC"/>
+                <StringItem index="20" value="AMT"/>
+                <StringItem index="21" value="SAT"/>
+                <StringItem index="22" value="PAP"/>
+                <StringItem index="23" value="PAG"/>
+                <StringItem index="24" value="TUB"/>
+                <StringItem index="25" value="MAR"/>
+                <StringItem index="26" value="ARG"/>
+                <StringItem index="27" value="GUR"/>
+                <StringItem index="28" value="PTO"/>
+                <StringItem index="29" value="CUP"/>
+                <StringItem index="30" value="EDC"/>
+                <StringItem index="31" value="PNA"/>
+                <StringItem index="32" value="SFX"/>
+                <StringItem index="33" value="VIR"/>
+                <StringItem index="34" value="CDC"/>
+                <StringItem index="35" value="ITU"/>
+                <StringItem index="36" value="CAP"/>
+                <StringItem index="37" value="TMC"/>
+                <StringItem index="38" value="RMO"/>
+                <StringItem index="39" value="CPO"/>
+                <StringItem index="40" value="PAF"/>
+                <StringItem index="41" value="ANN"/>
+                <StringItem index="42" value="SDA"/>
+                <StringItem index="43" value="RBV"/>
+                <StringItem index="44" value="PAM"/>
+                <StringItem index="45" value="WAD"/>
+                <StringItem index="46" value="MIT"/>
+                <StringItem index="47" value="BAO"/>
+                <StringItem index="48" value="XIG"/>
+                <StringItem index="49" value="XAB"/>
+                <StringItem index="50" value="FOA"/>
+                <StringItem index="51" value="TOC"/>
+                <StringItem index="52" value="SAA"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelPathOrigem">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Path Origem :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelPathDestino">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Path Destino :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelArquivo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Arquivo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldPathOrigem">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldPathDestino">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldNomeArquivos">
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonTrazerArquivos">
+          <Properties>
+            <Property name="mnemonic" type="int" value="116"/>
+            <Property name="text" type="java.lang.String" value="Trazer Arquivos"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonTrazerArquivosActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonEnviarArquivo">
+          <Properties>
+            <Property name="mnemonic" type="int" value="101"/>
+            <Property name="text" type="java.lang.String" value="Enviar Arquivos"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEnviarArquivoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonFechar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fechar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonFecharActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
