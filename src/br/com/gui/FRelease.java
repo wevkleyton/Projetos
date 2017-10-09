@@ -18,6 +18,7 @@ import br.com.bean.Release;
 import br.com.bo.ExecutaDeploy;
 import br.com.bo.VerificaUltimaReleasesFiliais;
 import br.com.constantes.TodasAsLojas;
+import br.com.utilitarios.BarraProgresso;
 import br.com.utilitarios.TesteComunicacao;
 import net.sf.jasperreports.engine.JRException;
 
@@ -223,10 +224,8 @@ public class FRelease extends javax.swing.JDialog {
                 qtdloja = i++;
             }
         }
-        int retorno = JOptionPane.showConfirmDialog(null, "Gerar Release me modo Lista ? ","",JOptionPane.YES_NO_OPTION);
-        TodasAsLojas tlojas = new TodasAsLojas();
-        ArrayList<String> lojas = tlojas.ListaLojas();
-        if (retorno == 1) {
+        ArrayList<String> lojas = new TodasAsLojas().ListaLojas();
+        
             if (jComboBoxListaLoja.getSelectedItem().toString() == Todas) {
                 for (int i = 0; i < lojas.size(); i++) {
                     String loja = lojas.get(i);
@@ -243,6 +242,8 @@ public class FRelease extends javax.swing.JDialog {
                                     lojaComParametros = verificaRelease.verRelease(loja, qtdloja);
                                 } else {
                                     lojaComParametros = verificaRelease.verRelease(lojas.get(i), qtdloja);
+                            		BarraProgresso barraProgresso = new BarraProgresso();
+                        			barraProgresso.startBarraPrograsso(loja);
                                     if (lojaComParametros != null) {
                                         String[] result = lojaComParametros.split(",");
                                         val.addRow(new String[]{result[0], result[1], result[2]});
@@ -301,7 +302,7 @@ public class FRelease extends javax.swing.JDialog {
                     release.setReleaseAplicada("OFF LINE");
                 }
             }
-        } else {
+       
             String loja = null;
             if (jComboBoxListaLoja.getSelectedItem().toString() == "TODAS"){
 
@@ -321,9 +322,6 @@ public class FRelease extends javax.swing.JDialog {
                 }
 
             }
-
-
-        }
 
 
     }//GEN-LAST:event_jToggleButtonreleaseActionPerformed

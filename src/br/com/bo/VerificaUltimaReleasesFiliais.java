@@ -15,6 +15,7 @@ import br.com.constantes.ConstanteComandos;
 import br.com.constantes.ConstanteTeste;
 import br.com.gui.FRelease;
 import br.com.gui.JLojas;
+import br.com.utilitarios.BarraProgresso;
 import br.com.utilitarios.Conecta;
 
 /**
@@ -36,15 +37,7 @@ public class VerificaUltimaReleasesFiliais  extends javax.swing.JDialog {
 				"/socic-" + loja.toLowerCase() + "-client.jnlp |grep Update |cut -d\"-\" -f3 |cut -d\" \" -f3");
 
 		try {
-					
-			System.out.println("Loja :" + loja);
-			JLojas jLojas = new JLojas(null, rootPaneCheckingEnabled);
-			jLojas.setLoja(loja);
-			jLojas.mostraLoja();
-
-
-
-		    if (loja.equals("STI")){
+ 		    if (loja.equals("STI")){
 				release.setLoja(loja.toUpperCase());
 				release.setReleaseAplicada(conecta.Conecta("ubt" + loja.toLowerCase(), release.getReleaseAplicada()));
 				release.setReleaseBaixada(conecta.Conecta("ubt" + loja.toLowerCase(), constantes.getUltima_releaseJap()));

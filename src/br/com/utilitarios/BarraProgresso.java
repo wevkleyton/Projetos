@@ -3,6 +3,7 @@ package br.com.utilitarios;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.Frame;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,26 +27,29 @@ public class BarraProgresso extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		BarraProgresso frame = new BarraProgresso("aba");
+//		BarraProgresso frame = new BarraProgresso();
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//			
+//		});
 		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-			
-		});
+		BarraProgresso barra = new BarraProgresso();
+		barra.startBarraPrograsso("teste");
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public BarraProgresso(String loja) {
-		setTitle("Exemplo Progress Bar Temporizada");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	public void BarraProgressoLoja(String loja) {
+		this.setVisible(true);
+		setTitle("Verificando Loja!");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 400, 80);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -93,6 +97,20 @@ public class BarraProgresso extends JFrame {
 	private Component setLabel(String loja) {
 		JLabel jLabel = new JLabel("Filial de : " + loja);
 		return jLabel;
+	}
+	
+	public void startBarraPrograsso(String loja) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					BarraProgresso barra = new BarraProgresso();
+					barra.BarraProgressoLoja(loja);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+		});
 	}
 	
 }
