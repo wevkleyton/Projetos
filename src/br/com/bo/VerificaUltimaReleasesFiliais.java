@@ -1,21 +1,10 @@
 package br.com.bo;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import br.com.bean.Release;
 import br.com.constantes.ConstanteComandos;
-import br.com.constantes.ConstanteTeste;
-import br.com.gui.FRelease;
-import br.com.gui.JLojas;
-import br.com.utilitarios.BarraProgresso;
 import br.com.utilitarios.Conecta;
 
 /**
@@ -32,10 +21,12 @@ public class VerificaUltimaReleasesFiliais  extends javax.swing.JDialog {
 	@SuppressWarnings("static-access")
 	public String verRelease(String loja, int qtdloja) {
 		String lojaComParametros = null;
+		
+		System.out.println("Loja: " + loja);
 
 		release.setReleaseAplicada("cat /var/lib/tomcat6/webapps/cliente_" + loja.toLowerCase() +
 				"/socic-" + loja.toLowerCase() + "-client.jnlp |grep Update |cut -d\"-\" -f3 |cut -d\" \" -f3");
-
+//15950567
 		try {
  		    if (loja.equals("STI")){
 				release.setLoja(loja.toUpperCase());
@@ -50,7 +41,14 @@ public class VerificaUltimaReleasesFiliais  extends javax.swing.JDialog {
 				lojaComParametros = release.getLoja() + "," + release.getReleaseBaixada() + "," +  release.getReleaseAplicada();
 				
 				
+			}else if (loja.equals("SAA")) {
+				release.setLoja(loja.toUpperCase());
+				release.setReleaseAplicada(conecta.Conecta("scosta" , release.getReleaseAplicada()));
+				release.setReleaseBaixada(conecta.Conecta("scosta" , constantes.getUltima_releaseJap()));
+				lojaComParametros = release.getLoja() + "," + release.getReleaseBaixada() + "," +  release.getReleaseAplicada();
+				
 			}else{
+				
 				release.setLoja(loja.toUpperCase());
 				release.setReleaseBaixada(conecta.Conecta("sco" + loja.toLowerCase(), constantes.getUltima_release()));
 				release.setReleaseAplicada(conecta.Conecta("sco" + loja.toLowerCase(), release.getReleaseAplicada()));

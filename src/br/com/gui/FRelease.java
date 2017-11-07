@@ -5,20 +5,18 @@
  */
 package br.com.gui;
 
-import java.awt.Cursor;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
-import javax.swing.JProgressBar;
 import javax.swing.table.DefaultTableModel;
 
+import com.sun.glass.events.MouseEvent;
+
 import br.com.bean.Release;
-import br.com.bo.ExecutaDeploy;
 import br.com.bo.VerificaUltimaReleasesFiliais;
 import br.com.constantes.TodasAsLojas;
-import br.com.utilitarios.BarraProgresso;
 import br.com.utilitarios.TesteComunicacao;
 import net.sf.jasperreports.engine.JRException;
 
@@ -67,6 +65,7 @@ public class FRelease extends javax.swing.JDialog {
         jToggleButtonrelease = new javax.swing.JToggleButton();
         jToggleButtonSair = new javax.swing.JToggleButton();
         jButtonImprimir = new javax.swing.JButton();
+        jLabelMostraLoja = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -128,6 +127,8 @@ public class FRelease extends javax.swing.JDialog {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 20;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
@@ -143,7 +144,7 @@ public class FRelease extends javax.swing.JDialog {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 50;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
@@ -164,11 +165,16 @@ public class FRelease extends javax.swing.JDialog {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 20;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanelButao.add(jButtonImprimir, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanelButao.add(jLabelMostraLoja, gridBagConstraints);
 
         javax.swing.GroupLayout jPanelPrincipalLayout = new javax.swing.GroupLayout(jPanelPrincipal);
         jPanelPrincipal.setLayout(jPanelPrincipalLayout);
@@ -241,9 +247,11 @@ public class FRelease extends javax.swing.JDialog {
                                 if (loja.equals("ALT")) {
                                     lojaComParametros = verificaRelease.verRelease(loja, qtdloja);
                                 } else {
+                                	jLabelMostraLoja.setText(loja);
+//                                	JOptionPane.showMessageDialog(null, loja);
                                     lojaComParametros = verificaRelease.verRelease(lojas.get(i), qtdloja);
-                            		BarraProgresso barraProgresso = new BarraProgresso();
-                        			barraProgresso.startBarraPrograsso(loja);
+//                            		BarraProgresso barraProgresso = new BarraProgresso();
+//                        			barraProgresso.startBarraPrograsso(loja);
                                     if (lojaComParametros != null) {
                                         String[] result = lojaComParametros.split(",");
                                         val.addRow(new String[]{result[0], result[1], result[2]});
@@ -322,7 +330,7 @@ public class FRelease extends javax.swing.JDialog {
                 }
 
             }
-
+            jLabelMostraLoja.setText("");
 
     }//GEN-LAST:event_jToggleButtonreleaseActionPerformed
 
@@ -339,9 +347,12 @@ public class FRelease extends javax.swing.JDialog {
 
     private void jTableReleaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableReleaseMouseClicked
         // TODO add your handling code here:
-        FDeployRelease fDeployRelease = new FDeployRelease(null, rootPaneCheckingEnabled);
-        System.out.println(jTableRelease.getValueAt(jTableRelease.getSelectedRow(), 0));
-        fDeployRelease.setVisible(true);
+    	if (evt.getClickCount() == 2) {
+    		FDeployRelease fDeployRelease = new FDeployRelease(null, rootPaneCheckingEnabled);
+    		System.out.println(jTableRelease.getValueAt(jTableRelease.getSelectedRow(), 0));
+    		fDeployRelease.setVisible(true);
+    		
+    	}
 
 
     }//GEN-LAST:event_jTableReleaseMouseClicked
@@ -393,6 +404,7 @@ public class FRelease extends javax.swing.JDialog {
     private javax.swing.JButton jButtonImprimir;
     private javax.swing.JComboBox jComboBoxListaLoja;
     private javax.swing.JLabel jLabelLojas;
+    private javax.swing.JLabel jLabelMostraLoja;
     private javax.swing.JPanel jPanelButao;
     private javax.swing.JPanel jPanelLoja;
     private javax.swing.JPanel jPanelPrincipal;
