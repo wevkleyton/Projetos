@@ -33,10 +33,11 @@ public class JLojas extends javax.swing.JDialog {
 		this.loja = loja;
 	}
 
-	public JLojas(java.awt.Frame parent, boolean modal) {
+	public JLojas(java.awt.Frame parent, boolean modal)  {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
+        jLabelFilial.setText(loja);
     }
 
     /**
@@ -50,7 +51,6 @@ public class JLojas extends javax.swing.JDialog {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
-        jProgressBarRelease = new javax.swing.JProgressBar();
         jLabelFrase = new javax.swing.JLabel();
         jLabelFilial = new javax.swing.JLabel();
 
@@ -58,14 +58,6 @@ public class JLojas extends javax.swing.JDialog {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Release Filial"));
         jPanel1.setLayout(new java.awt.GridBagLayout());
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 170;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        jPanel1.add(jProgressBarRelease, gridBagConstraints);
 
         jLabelFrase.setText("Verificando Release da Filial de :");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -97,26 +89,26 @@ public class JLojas extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void mostraLoja() throws InterruptedException {
-    	
-    	jLabelFilial.setText(getLoja());
-    	    	
-    	Timer timer = new Timer();
-    	timer.schedule(task(), 2000);
-    	timer.wait(2000);
-    	
-    	this.dispose();
-    	
-    }
+//    public void mostraLoja() throws InterruptedException {
+//    	
+//    	jLabelFilial.setText(getLoja());
+//    	    	
+//    	Timer timer = new Timer();
+//    	timer.schedule(task(), 2000);
+//    	timer.wait(2000);
+//    	
+//    	this.dispose();
+//    	
+//    }
     
-    public TimerTask task() {
-    	this.isDisplayable();
-    	for (int i = 0; i < 100; i++) {
-    		jProgressBarRelease.setValue(i);
-			
-		}
-		return null;
-    }
+//    public TimerTask task() {
+//    	this.isDisplayable();
+//    	for (int i = 0; i < 100; i++) {
+//    		jProgressBarRelease.setValue(i);
+//			
+//		}
+//		return null;
+//    }
     /**
      * @param args the command line arguments
      */
@@ -163,6 +155,5 @@ public class JLojas extends javax.swing.JDialog {
     private javax.swing.JLabel jLabelFilial;
     private javax.swing.JLabel jLabelFrase;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JProgressBar jProgressBarRelease;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,7 +22,7 @@ public class VerificaUltimaReleasesFiliais  extends javax.swing.JDialog {
 	public String verRelease(String loja, int qtdloja) {
 		String lojaComParametros = null;
 		
-		System.out.println("Loja: " + loja);
+		System.out.println("Loja => " + loja);
 
 		release.setReleaseAplicada("cat /var/lib/tomcat6/webapps/cliente_" + loja.toLowerCase() +
 				"/socic-" + loja.toLowerCase() + "-client.jnlp |grep Update |cut -d\"-\" -f3 |cut -d\" \" -f3");

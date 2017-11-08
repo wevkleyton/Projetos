@@ -37,11 +37,8 @@ public class FPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jMenuBarSair = new javax.swing.JMenuBar();
         jMenuSistema = new javax.swing.JMenu();
-        jMenuItemDeploy = new javax.swing.JMenuItem();
         jMenuItemRelease = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -53,35 +50,8 @@ public class FPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/resources/cldstk-deploy-icon1.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(jLabel3)
-                .addContainerGap(259, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 24, Short.MAX_VALUE))
-        );
-
         jMenuSistema.setMnemonic('i');
         jMenuSistema.setText("Sistema");
-
-        jMenuItemDeploy.setMnemonic('d');
-        jMenuItemDeploy.setText("Deploy");
-        jMenuItemDeploy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemDeployActionPerformed(evt);
-            }
-        });
-        jMenuSistema.add(jMenuItemDeploy);
 
         jMenuItemRelease.setMnemonic('r');
         jMenuItemRelease.setText("Release");
@@ -142,21 +112,15 @@ public class FPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 532, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 555, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuItemDeployActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDeployActionPerformed
-    	FDesploy fDeploy = new FDesploy();
-    	fDeploy.setVisible(true);
-
-    }//GEN-LAST:event_jMenuItemDeployActionPerformed
 
     private void jMenuItemReleaseActionPerformed(java.awt.event.ActionEvent evt) {                                                  
     	FRelease newRelease = new FRelease(this, true);
@@ -238,18 +202,15 @@ public class FPrincipal extends javax.swing.JFrame {
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBarSair;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItemDeploy;
     private javax.swing.JMenuItem jMenuItemEnviaArquivos;
     private javax.swing.JMenuItem jMenuItemRelease;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuSair;
     private javax.swing.JMenu jMenuSistema;
     private javax.swing.JMenu jMenuUtils;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

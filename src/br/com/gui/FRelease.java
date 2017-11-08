@@ -8,6 +8,7 @@ package br.com.gui;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -123,7 +124,12 @@ public class FRelease extends javax.swing.JDialog {
         jToggleButtonrelease.setText("Release");
         jToggleButtonrelease.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButtonreleaseActionPerformed(evt);
+                try {
+					jToggleButtonreleaseActionPerformed(evt);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -213,7 +219,7 @@ public class FRelease extends javax.swing.JDialog {
     }//GEN-LAST:event_jToggleButtonSairActionPerformed
 
     @SuppressWarnings("static-access")
-    private void jToggleButtonreleaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonreleaseActionPerformed
+    private void jToggleButtonreleaseActionPerformed(java.awt.event.ActionEvent evt) throws InterruptedException {//GEN-FIRST:event_jToggleButtonreleaseActionPerformed
 
         String Todas = "TODAS";
 
@@ -248,7 +254,12 @@ public class FRelease extends javax.swing.JDialog {
                                     lojaComParametros = verificaRelease.verRelease(loja, qtdloja);
                                 } else {
                                 	jLabelMostraLoja.setText(loja);
+                                	this.validate();
 //                                	JOptionPane.showMessageDialog(null, loja);
+//                                	JLojas jLojas = new JLojas(null, rootPaneCheckingEnabled);
+//                                	jLojas.setLoja(loja);
+//                                	jLojas.setVisible(true);
+                                	
                                     lojaComParametros = verificaRelease.verRelease(lojas.get(i), qtdloja);
 //                            		BarraProgresso barraProgresso = new BarraProgresso();
 //                        			barraProgresso.startBarraPrograsso(loja);
