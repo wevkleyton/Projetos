@@ -2,14 +2,13 @@ package br.com.utilitarios;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import com.itextpdf.text.pdf.parser.Path;
+import com.itextpdf.text.pdf.parser.clipper.Paths;
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
@@ -36,23 +35,23 @@ public class Executarepublicar {
 	}
 
 	public void modificaArquivos() throws IOException, InterruptedException {
-		String republicar = "republicar.sh";
-		Path path = Paths.get(path_object + "/" + republicar);
-		List<String> linha = Files.readAllLines(path);
-		List<String> resultado = new ArrayList<String>();
-		for (String l : linha) {
-			if (l.contains("APP_SCHEMA=")) {
-				String novaLinha = "APP_SCHEMA= " + getSchema();
-				l = novaLinha;
-			}
-			if (l.contains("TABELAS=")) {
-				String novaLinha = "TABELAS=" + getTabela();
-				l = novaLinha;
-			}
-			resultado.add(l);
-		}
-		Files.write(path, resultado);
-		executaRepublicar();
+//		String republicar = "republicar.sh";
+//		Path path = Paths.get(path_object + "/" + republicar);
+//		List<String> linha = Files.readAllLines(path);
+//		List<String> resultado = new ArrayList<String>();
+//		for (String l : linha) {
+//			if (l.contains("APP_SCHEMA=")) {
+//				String novaLinha = "APP_SCHEMA= " + getSchema();
+//				l = novaLinha;
+//			}
+//			if (l.contains("TABELAS=")) {
+//				String novaLinha = "TABELAS=" + getTabela();
+//				l = novaLinha;
+//			}
+//			resultado.add(l);
+//		}
+//		Files.write(path, resultado);
+//		executaRepublicar();
 
 	}
 

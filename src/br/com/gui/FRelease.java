@@ -8,12 +8,8 @@ package br.com.gui;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
 
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
-import com.sun.glass.events.MouseEvent;
 
 import br.com.bean.Release;
 import br.com.bo.VerificaUltimaReleasesFiliais;

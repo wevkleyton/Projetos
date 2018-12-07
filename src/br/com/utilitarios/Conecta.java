@@ -40,7 +40,9 @@ public class Conecta {
 		JSch jsch = new JSch();
 		java.util.Properties config = new java.util.Properties();
 		config.put("StrictHostKeyChecking", "no");
-		if ( host.contains("aba") || host.contains("sti") || host.contains("rbc") || host.contains("bnv") || host.contains("rmo")){
+		if ( host.contains("aba") || host.contains("bao") || host.contains("bcn") || host.contains("bgc") || host.contains("bnv")
+				|| host.contains("cap") || host.contains("igm") || host.contains("rbc") || host.contains("rmo") || host.contains("sdn")
+				|| host.contains("sti") || host.contains("tal") || host.contains("lmc")){
 			usuario = constantes.getUser();
 			senha = constantes.getPassword();
 		}else{

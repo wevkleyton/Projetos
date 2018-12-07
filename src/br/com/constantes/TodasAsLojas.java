@@ -20,13 +20,13 @@ public class TodasAsLojas {
 		lojas.add("BME");
 		lojas.add("BNV");
 		lojas.add("CAP");
-		lojas.add("CDC");
+//		lojas.add("CDC");
 		lojas.add("COA");
-		lojas.add("CUP");
-		lojas.add("EDC");
+//		lojas.add("CUP");
+//		lojas.add("EDC");
 		lojas.add("IGM");
 		lojas.add("ITU");
-		lojas.add("JAC");
+//		lojas.add("JAC");
 		lojas.add("MAR");
 		lojas.add("MJU");
 		lojas.add("PAG");

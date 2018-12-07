@@ -67,7 +67,7 @@ public class VerificaUltimaReleasesFiliais  extends javax.swing.JDialog {
 
 	public List executaReleaseList(String loja){
 		List<String> comandos = new ArrayList<String>();
-		release.setReleaseAplicada("cat /var/lib/tomcat6/webapps/cliente_" + loja.toLowerCase() + "/socic-" + loja.toLowerCase() + "-client.jnlp |grep Update |cut -d\"-\" -f3 |cut -d\" \" -f3");
+		release.setReleaseAplicada("cat /var/lib/tomcat6/webapps/cliente_" + loja.toLowerCase() + "/socic-" + loja.toLowerCase().subSequence(3, 6) + "-client.jnlp |grep Update |cut -d\"-\" -f3 |cut -d\" \" -f3");
 		try {
 
 			comandos.add(release.getReleaseAplicada());
