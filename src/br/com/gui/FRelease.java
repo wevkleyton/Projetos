@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 import br.com.bean.Release;
 import br.com.bo.VerificaUltimaReleasesFiliais;
 import br.com.constantes.TodasAsLojas;
+import br.com.utilitarios.BarraProgresso;
 import br.com.utilitarios.TesteComunicacao;
 import net.sf.jasperreports.engine.JRException;
 
@@ -221,6 +222,7 @@ public class FRelease extends javax.swing.JDialog {
 
         String lojaComParametros = null;
         VerificaUltimaReleasesFiliais verificaRelease = new VerificaUltimaReleasesFiliais();
+        BarraProgresso barra = new BarraProgresso();
         TesteComunicacao comunicacao = new TesteComunicacao();
         val =  (DefaultTableModel) jTableRelease.getModel();
         val.setNumRows(0);
@@ -255,8 +257,8 @@ public class FRelease extends javax.swing.JDialog {
 //                                	JLojas jLojas = new JLojas(null, rootPaneCheckingEnabled);
 //                                	jLojas.setLoja(loja);
 //                                	jLojas.setVisible(true);
-                                	
-                                    lojaComParametros = verificaRelease.verRelease(lojas.get(i), qtdloja);
+               						barra.startBarraPrograsso(loja);
+                    				lojaComParametros = verificaRelease.verRelease(lojas.get(i), qtdloja);
 //                            		BarraProgresso barraProgresso = new BarraProgresso();
 //                        			barraProgresso.startBarraPrograsso(loja);
                                     if (lojaComParametros != null) {
@@ -295,6 +297,7 @@ public class FRelease extends javax.swing.JDialog {
                     loja = "STA";
                 }
                 if (comunicacao.isOnLine(loja) == true) {
+                	barra.startBarraPrograsso(loja);
                     lojaComParametros = verificaRelease.verRelease(loja, qtdloja);
                     if (lojaComParametros != null) {
                         String[] result = lojaComParametros.split(",");
