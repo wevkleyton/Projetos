@@ -65,19 +65,19 @@ public class VerificaUltimaReleasesFiliais  extends javax.swing.JDialog {
 
 	}
 
-	public List executaReleaseList(String loja){
-		List<String> comandos = new ArrayList<String>();
-		release.setReleaseAplicada("cat /var/lib/tomcat6/webapps/cliente_" + loja.toLowerCase() + "/socic-" + loja.toLowerCase().subSequence(3, 6) + "-client.jnlp |grep Update |cut -d\"-\" -f3 |cut -d\" \" -f3");
-		try {
-
-			comandos.add(release.getReleaseAplicada());
-			comandos.add(release.getReleaseBaixada());
-			Conecta.Conecta(loja, comandos);
-		}catch (Exception e){
-			e.printStackTrace();
-		}
-		return comandos ;
-	}
+//	public List executaReleaseList(String loja){
+//		List<String> comandos = new ArrayList<String>();
+//		release.setReleaseAplicada("cat /var/lib/tomcat6/webapps/cliente_" + loja.toLowerCase() + "/socic-" + loja.toLowerCase().subSequence(3, 6) + "-client.jnlp |grep Update |cut -d\"-\" -f3 |cut -d\" \" -f3");
+//		try {
+//
+//			comandos.add(release.getReleaseAplicada());
+//			comandos.add(release.getReleaseBaixada());
+//			Conecta.Conecta(loja, comandos);
+//		}catch (Exception e){
+//			e.printStackTrace();
+//		}
+//		return comandos ;
+//	}
 
 	@SuppressWarnings("static-access")
 	public void BaixarRelease(String loja, int tdloja) {

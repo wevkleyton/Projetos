@@ -322,25 +322,25 @@ public class FRelease extends javax.swing.JDialog {
             }
        
             String loja = null;
-            if (jComboBoxListaLoja.getSelectedItem().toString() == "TODAS"){
+//            if (jComboBoxListaLoja.getSelectedItem().toString() == "TODAS"){
+//
+//                for (int i = 0; i < lojas.size(); i++){
+//                    loja = lojas.get(i);
+//                    System.out.println(loja);
+//                    if (loja != "TODAS"){
+//                        verificaRelease.executaReleaseList(loja);
+//                    }else{
+//                        continue;
+//                    }
+//                }
+//            }else{
+//                List<String> listaRetorno = verificaRelease.executaReleaseList("sco"+jComboBoxListaLoja.getSelectedItem().toString().toLowerCase());
+//                for (String lista : listaRetorno){
+//                    System.out.println(lista);
+//                }
 
-                for (int i = 0; i < lojas.size(); i++){
-                    loja = lojas.get(i);
-                    System.out.println(loja);
-                    if (loja != "TODAS"){
-                        verificaRelease.executaReleaseList(loja);
-                    }else{
-                        continue;
-                    }
-                }
-            }else{
-                List<String> listaRetorno = verificaRelease.executaReleaseList("sco"+jComboBoxListaLoja.getSelectedItem().toString().toLowerCase());
-                for (String lista : listaRetorno){
-                    System.out.println(lista);
-                }
-
-            }
-            jLabelMostraLoja.setText("");
+//            }
+//            jLabelMostraLoja.setText("");
 
     }//GEN-LAST:event_jToggleButtonreleaseActionPerformed
 
