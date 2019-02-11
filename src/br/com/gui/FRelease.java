@@ -25,12 +25,21 @@ public class FRelease extends javax.swing.JDialog {
 
     TodasAsLojas tlojas = new TodasAsLojas();
     ArrayList<String> lojas = tlojas.ListaLojas();
+    private String lojaRelease;
 //	private String releaseBaixada;
 //	private String releaseAplicada;
 //	private String lojaRelease;
 //	private List<String> listaRelease;
 
-    Release release = new Release();
+    public String getLojaRelease() {
+		return lojaRelease;
+	}
+
+	public void setLojaRelease(String lojaRelease) {
+		this.lojaRelease = lojaRelease;
+	}
+
+	Release release = new Release();
     DefaultTableModel val ;
 //	
 
@@ -222,7 +231,6 @@ public class FRelease extends javax.swing.JDialog {
 
         String lojaComParametros = null;
         VerificaUltimaReleasesFiliais verificaRelease = new VerificaUltimaReleasesFiliais();
-        BarraProgresso barra = new BarraProgresso();
         TesteComunicacao comunicacao = new TesteComunicacao();
         val =  (DefaultTableModel) jTableRelease.getModel();
         val.setNumRows(0);
@@ -257,7 +265,6 @@ public class FRelease extends javax.swing.JDialog {
 //                                	JLojas jLojas = new JLojas(null, rootPaneCheckingEnabled);
 //                                	jLojas.setLoja(loja);
 //                                	jLojas.setVisible(true);
-               						barra.startBarraPrograsso(loja);
                     				lojaComParametros = verificaRelease.verRelease(lojas.get(i), qtdloja);
 //                            		BarraProgresso barraProgresso = new BarraProgresso();
 //                        			barraProgresso.startBarraPrograsso(loja);
@@ -288,6 +295,7 @@ public class FRelease extends javax.swing.JDialog {
                 }
             } else {
                 String loja = jComboBoxListaLoja.getSelectedItem().toString();
+                setLojaRelease(loja);
                 qtdloja = 1;
                 int column;
 
@@ -297,7 +305,6 @@ public class FRelease extends javax.swing.JDialog {
                     loja = "STA";
                 }
                 if (comunicacao.isOnLine(loja) == true) {
-                	barra.startBarraPrograsso(loja);
                     lojaComParametros = verificaRelease.verRelease(loja, qtdloja);
                     if (lojaComParametros != null) {
                         String[] result = lojaComParametros.split(",");
@@ -321,26 +328,26 @@ public class FRelease extends javax.swing.JDialog {
                 }
             }
        
-            String loja = null;
-            if (jComboBoxListaLoja.getSelectedItem().toString() == "TODAS"){
-
-                for (int i = 0; i < lojas.size(); i++){
-                    loja = lojas.get(i);
-                    System.out.println(loja);
-                    if (loja != "TODAS"){
-                        verificaRelease.executaReleaseList(loja);
-                    }else{
-                        continue;
-                    }
-                }
-            }else{
-                List<String> listaRetorno = verificaRelease.executaReleaseList("sco"+jComboBoxListaLoja.getSelectedItem().toString().toLowerCase());
-                for (String lista : listaRetorno){
-                    System.out.println(lista);
-                }
-
-            }
-            jLabelMostraLoja.setText("");
+//            String loja = null;
+//            if (jComboBoxListaLoja.getSelectedItem().toString() == "TODAS"){
+//
+//                for (int i = 0; i < lojas.size(); i++){
+//                    loja = lojas.get(i);
+//                    System.out.println(loja);
+//                    if (loja != "TODAS"){
+//                        verificaRelease.executaReleaseList(loja);
+//                    }else{
+//                        continue;
+//                    }
+//                }
+//            }else{
+//                List<String> listaRetorno = verificaRelease.executaReleaseList("sco"+jComboBoxListaLoja.getSelectedItem().toString().toLowerCase());
+//                for (String lista : listaRetorno){
+//                    System.out.println(lista);
+//                }
+//
+//            }
+//            jLabelMostraLoja.setText("");
 
     }//GEN-LAST:event_jToggleButtonreleaseActionPerformed
 
@@ -360,6 +367,7 @@ public class FRelease extends javax.swing.JDialog {
     	if (evt.getClickCount() == 2) {
     		FDeployRelease fDeployRelease = new FDeployRelease(null, rootPaneCheckingEnabled);
     		System.out.println(jTableRelease.getValueAt(jTableRelease.getSelectedRow(), 0));
+    		fDeployRelease.setLoja(getLojaRelease());
     		fDeployRelease.setVisible(true);
     		
     	}

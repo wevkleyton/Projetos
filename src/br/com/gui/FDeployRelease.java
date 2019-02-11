@@ -5,13 +5,30 @@
  */
 package br.com.gui;
 
+import java.io.IOException;
+
+import com.jcraft.jsch.JSchException;
+
+import br.com.utilitarios.Conecta;
+
 /**
  *
  * @author wev
  */
+@SuppressWarnings("serial")
 public class FDeployRelease extends javax.swing.JDialog {
+	
+	private String loja;
 
-    /**
+    public String getLoja() {
+		return loja;
+	}
+
+	public void setLoja(String loja) {
+		this.loja = loja;
+	}
+
+	/**
      * Creates new form FDeployRelease
      */
     public FDeployRelease(java.awt.Frame parent, boolean modal) {
@@ -58,7 +75,12 @@ public class FDeployRelease extends javax.swing.JDialog {
         jToggleButtonExecRelease.setText("Exec. Release");
         jToggleButtonExecRelease.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButtonExecReleaseActionPerformed(evt);
+                try {
+					jToggleButtonExecReleaseActionPerformed(evt);
+				} catch (JSchException | IOException | InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -86,8 +108,14 @@ public class FDeployRelease extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButtonExecDeployActionPerformed
 
-    private void jToggleButtonExecReleaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonExecReleaseActionPerformed
+    @SuppressWarnings("static-access")
+	private void jToggleButtonExecReleaseActionPerformed(java.awt.event.ActionEvent evt) throws JSchException, IOException, InterruptedException {//GEN-FIRST:event_jToggleButtonExecReleaseActionPerformed
         // TODO add your handling code here:
+    	String comando  = "/u1/jap/deploy_4.4/get_release.sh";
+    	Conecta conecta = new Conecta();
+    	conecta.Conecta("sco" + getLoja().toLowerCase(), comando);
+    	System.out.println(comando );
+    	
     }//GEN-LAST:event_jToggleButtonExecReleaseActionPerformed
 
     /**
