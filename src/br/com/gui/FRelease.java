@@ -27,10 +27,18 @@ public class FRelease extends javax.swing.JDialog {
     ArrayList<String> lojas = tlojas.ListaLojas();
 //	private String releaseBaixada;
 //	private String releaseAplicada;
-//	private String lojaRelease;
+	private String lojaRelease;
 //	private List<String> listaRelease;
 
-    Release release = new Release();
+    public String getLojaRelease() {
+		return lojaRelease;
+	}
+
+	public void setLojaRelease(String lojaRelease) {
+		this.lojaRelease = lojaRelease;
+	}
+
+	Release release = new Release();
     DefaultTableModel val ;
 //	
 
